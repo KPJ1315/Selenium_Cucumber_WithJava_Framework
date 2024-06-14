@@ -62,6 +62,7 @@ public class LoginStep {
     public void userLandsOnProviderHomepage() {
         try {
 //            driverWait.until (ExpectedConditions.visibilityOf (loginPage.getHomePage ()));
+            Thread.sleep (5000);
             loginPage.verifyHomePage ( );
         } catch (Exception e) {
             throw new RuntimeException (e);

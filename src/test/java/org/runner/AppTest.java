@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith (Cucumber.class)
 @CucumberOptions(
-        features = {"src/Features/Login.feature"},
+        features = {"src/test/resources/Features/Login.feature"},
         glue = {"stepDef"},
         tags = "@run",
         monochrome = true,
@@ -16,9 +16,7 @@ import org.junit.runner.RunWith;
                 "junit:target/hc-cucumber.xml",
                 "rerun:target/hc-rerun.txt",
                 "html:target/cucumber-jvm-report",
-                "html:target/cucumber-reports",
-                "json:target/cucumber-report/cucumber.json",
-                "html:target/cucumber-report/cucumber.html"
+                "html:target/cucumber-reports"
         }
 )
 class AppTest{
