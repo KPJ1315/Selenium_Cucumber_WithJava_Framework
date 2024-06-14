@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="234.626" tests="8" skipped="0" failures="0" errors="0">
+<testcase classname="Doctor Login" name="Doctor login with valid credentials" time="9.099">
+<system-out><![CDATA[
+Given User opens the browser................................................passed
+When User opens the URL "https://acianadocisnuiprod-staging.azurewebsites.net/user/signIn".passed
+Then User clicks on sign-in.................................................passed
+And User enters email "karthik.jambagi@archents.com" and password "Kpj@4321" and clicks login.passed
+Then User lands on provider homepage........................................passed
+When User clicks on logout..................................................passed
+Then User closes browser....................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Doctor Login" name="Doctor login with invalid credentials - Example #1.1" time="35.417">
+<system-out><![CDATA[
+Given User opens the browser................................................passed
+When User opens the URL "https://acianadocisnuiprod-staging.azurewebsites.net/user/signIn".passed
+Then User clicks on sign-in.................................................passed
+And User enters email "karthik@gmail.com" and password "Kpj@4321" and clicks login.passed
+And User is shown error message.............................................passed
+Then User closes browser....................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Doctor Login" name="Doctor login with invalid credentials - Example #1.2" time="35.656">
+<system-out><![CDATA[
+Given User opens the browser................................................passed
+When User opens the URL "https://acianadocisnuiprod-staging.azurewebsites.net/user/signIn".passed
+Then User clicks on sign-in.................................................passed
+And User enters email "karthik" and password "Kpj@4321" and clicks login....passed
+And User is shown error message.............................................passed
+Then User closes browser....................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Doctor Login" name="Doctor login with invalid credentials - Example #1.3" time="36.331">
+<system-out><![CDATA[
+Given User opens the browser................................................passed
+When User opens the URL "https://acianadocisnuiprod-staging.azurewebsites.net/user/signIn".passed
+Then User clicks on sign-in.................................................passed
+And User enters email "karthik.jambagi@archents.com" and password "Kpj@1234" and clicks login.passed
+And User is shown error message.............................................passed
+Then User closes browser....................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Doctor Login" name="Doctor login with invalid credentials - Example #1.4" time="27.288">
+<system-out><![CDATA[
+Given User opens the browser................................................passed
+When User opens the URL "https://acianadocisnuiprod-staging.azurewebsites.net/user/signIn".passed
+Then User clicks on sign-in.................................................passed
+And User enters email "" and password "Kpj@1234" and clicks login...........passed
+And User is shown error message.............................................passed
+Then User closes browser....................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Doctor Login" name="Doctor login with invalid credentials - Example #1.5" time="35.35">
+<system-out><![CDATA[
+Given User opens the browser................................................passed
+When User opens the URL "https://acianadocisnuiprod-staging.azurewebsites.net/user/signIn".passed
+Then User clicks on sign-in.................................................passed
+And User enters email "karthik.jambagi@archnts.com" and password "Kpj@1234" and clicks login.passed
+And User is shown error message.............................................passed
+Then User closes browser....................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Doctor Login" name="Doctor login with invalid credentials - Example #1.6" time="27.602">
+<system-out><![CDATA[
+Given User opens the browser................................................passed
+When User opens the URL "https://acianadocisnuiprod-staging.azurewebsites.net/user/signIn".passed
+Then User clicks on sign-in.................................................passed
+And User enters email "karthik.jambagi@archnts.com" and password "" and clicks login.passed
+And User is shown error message.............................................passed
+Then User closes browser....................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Doctor Login" name="Doctor login with invalid credentials - Example #1.7" time="27.702">
+<system-out><![CDATA[
+Given User opens the browser................................................passed
+When User opens the URL "https://acianadocisnuiprod-staging.azurewebsites.net/user/signIn".passed
+Then User clicks on sign-in.................................................passed
+And User enters email "" and password "" and clicks login...................passed
+And User is shown error message.............................................passed
+Then User closes browser....................................................passed
+]]></system-out>
+</testcase>
+</testsuite>
