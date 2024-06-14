@@ -29,9 +29,9 @@ public class LoginStep {
         options.addArguments ("--disable-notifications");
         driver = new ChromeDriver (options);
         driver.manage ( ).window ( ).maximize ( );
-        driver.manage ( ).timeouts ( ).implicitlyWait (10, TimeUnit.SECONDS);
+        driver.manage ( ).timeouts ( ).implicitlyWait (8, TimeUnit.SECONDS);
         loginPage = new LoginPage (driver);
-        driverWait = new WebDriverWait (driver, Duration.ofSeconds (10));
+        driverWait = new WebDriverWait (driver, Duration.ofSeconds (8));
     }
 
 

@@ -11,23 +11,23 @@ Feature: Doctor Login
     When User clicks on logout
     Then User closes browser
 
-#    @TC2
-#    Scenario Outline: Doctor login with invalid credentials
-#      Given User opens the browser
-#      When User opens the URL "https://acianadocisnuiprod-staging.azurewebsites.net/user/signIn"
-#      Then User clicks on sign-in
-#      And  User enters email "<username>" and password "<password>" and clicks login
-#      And  User is shown error message
-#      Then User closes browser
-#      Examples:
-#        | username          | password |
-#        | karthik@gmail.com | Kpj@4321 |
-#        | karthik                      | Kpj@4321 |
-#        | karthik.jambagi@archents.com | Kpj@1234 |
-#        |                              | Kpj@1234 |
-#        | karthik.jambagi@archnts.com  | Kpj@1234 |
-#        | karthik.jambagi@archnts.com  |          |
-#        |                              |          |
+    @TC2
+    Scenario Outline: Doctor login with invalid credentials
+      Given User opens the browser
+      When User opens the URL "https://acianadocisnuiprod-staging.azurewebsites.net/user/signIn"
+      Then User clicks on sign-in
+      And  User enters email "<username>" and password "<password>" and clicks login
+      And  User is shown error message
+      Then User closes browser
+      Examples:
+        | username          | password |
+        | karthik@gmail.com | Kpj@4321 |
+        | karthik                      | Kpj@4321 |
+        | karthik.jambagi@archents.com | Kpj@1234 |
+        |                              | Kpj@1234 |
+        | karthik.jambagi@archnts.com  | Kpj@1234 |
+        | karthik.jambagi@archnts.com  |          |
+        |                              |          |
 
 
 
