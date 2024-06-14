@@ -52,7 +52,7 @@ public class LoginStep {
           driverWait.until (ExpectedConditions.visibilityOf (loginPage.getUserName ()));
           loginPage.setUserName (userName);
           loginPage.setPassWord (password);
-          loginPage.clickLoginButton ( );
+          loginPage.clickLoginButton( );
         } catch (Exception e) {
             throw new RuntimeException (e);
         }
