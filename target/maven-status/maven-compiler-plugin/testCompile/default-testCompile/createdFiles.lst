@@ -1,3 +1,5 @@
 pageObj\LoginPage.class
 stepDef\LoginStep.class
 org\runner\AppTest.class
+utility\InitialHelper.class
+utility\WaitHelper.class

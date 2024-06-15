@@ -128,7 +128,7 @@ public class LoginPage {
 
 
     public void verifyErrorMsg() {
-            boolean isAnyErrorDisplayed = false;
+        boolean isAnyErrorDisplayed = false;
 
         try {
             if (usrNameInvalidErrorMsg.isDisplayed ( )) {
@@ -138,38 +138,38 @@ public class LoginPage {
             // Handle exception if the element is not found or not initialized
         }
 
-            try {
-                if (lgnErrorMsg1.isDisplayed ( )) {
-                    isAnyErrorDisplayed = true;
-                }
-            } catch (NoSuchElementException | NullPointerException e) {
-                // Handle exception if the element is not found or not initialized
+        try {
+            if (lgnErrorMsg1.isDisplayed ( )) {
+                isAnyErrorDisplayed = true;
             }
-
-            try {
-                if (lgnErrorMsg2.isDisplayed ( )) {
-                    isAnyErrorDisplayed = true;
-                }
-            } catch (NoSuchElementException | NullPointerException e) {
-                // Handle exception if the element is not found or not initialized
-            }
-
-            try {
-                if (usrNameErrorMsg.isDisplayed ( )) {
-                    isAnyErrorDisplayed = true;
-                }
-            } catch (NoSuchElementException | NullPointerException e) {
-                // Handle exception if the element is not found or not initialized
-            }
-
-            try {
-                if (pswdErrorMsg.isDisplayed ( )) {
-                    isAnyErrorDisplayed = true;
-                }
-            } catch (NoSuchElementException | NullPointerException e) {
-                // Handle exception if the element is not found or not initialized
-            }
-
-            Assert.assertTrue ("No error message is displayed when one was expected.", isAnyErrorDisplayed);
+        } catch (NoSuchElementException | NullPointerException e) {
+            // Handle exception if the element is not found or not initialized
         }
+
+        try {
+            if (lgnErrorMsg2.isDisplayed ( )) {
+                isAnyErrorDisplayed = true;
+            }
+        } catch (NoSuchElementException | NullPointerException e) {
+            // Handle exception if the element is not found or not initialized
+        }
+
+        try {
+            if (usrNameErrorMsg.isDisplayed ( )) {
+                isAnyErrorDisplayed = true;
+            }
+        } catch (NoSuchElementException | NullPointerException e) {
+            // Handle exception if the element is not found or not initialized
+        }
+
+        try {
+            if (pswdErrorMsg.isDisplayed ( )) {
+                isAnyErrorDisplayed = true;
+            }
+        } catch (NoSuchElementException | NullPointerException e) {
+            // Handle exception if the element is not found or not initialized
+        }
+
+        Assert.assertTrue ("No error message is displayed when one was expected.", isAnyErrorDisplayed);
+    }
 }
