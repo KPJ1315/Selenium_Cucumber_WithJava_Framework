@@ -4,12 +4,15 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObj.LoginPage;
+import utility.WaitHelper;
 
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
@@ -18,7 +21,10 @@ public class LoginStep {
 
     WebDriver driver;
     LoginPage loginPage;
-    WebDriverWait driverWait;
+//    WebDriverWait driverWait;
+    Logger logger;
+    WaitHelper waitHelper;
+
 
 
     @Given("User opens the browser")
@@ -31,9 +37,10 @@ public class LoginStep {
         driver.manage ( ).window ( ).maximize ( );
         driver.manage ( ).timeouts ( ).implicitlyWait (8, TimeUnit.SECONDS);
         loginPage = new LoginPage (driver);
-        driverWait = new WebDriverWait (driver, Duration.ofSeconds (8));
+//        driverWait = new WebDriverWait (driver, Duration.ofSeconds (8));
+        logger = LogManager.getLogger (this.getClass ());
+        waitHelper = new WaitHelper (driver);
     }
-
 
     @When("^User opens the URL \"([^\"]*)\"$")
     public void userOpensTheURL(String providerURL) {
@@ -43,13 +50,14 @@ public class LoginStep {
     @Then("^User clicks on sign-in$")
     public void userClicksOnSignIn() {
         loginPage.clickSignIn ( );
-
     }
 
     @And("^User enters email \"([^\"]*)\" and password \"([^\"]*)\" and clicks login$")
     public void userEntersEmailAndPasswordAndClicksLogin(String userName, String password) {
         try {
-          driverWait.until (ExpectedConditions.visibilityOf (loginPage.getUserName ()));
+            logger.info ("Try to login with these creds: \n Username: "+userName+"\n Paswword: "+password);
+         // driverWait.until (ExpectedConditions.visibilityOf (loginPage.getUserName ()));
+            waitHelper.WaitForElement (loginPage.getUserName (),10 );
           loginPage.setUserName (userName);
           loginPage.setPassWord (password);
           loginPage.clickLoginButton( );
@@ -71,7 +79,8 @@ public class LoginStep {
 
     @When("^User clicks on logout$")
     public void userClicksOnLogout() {
-        driverWait.withTimeout (Duration.ofSeconds (5000));
+        //driverWait.withTimeout (Duration.ofSeconds (5000));
+        waitHelper.WaitForElement (loginPage.getHomePage (),5);
         loginPage.userLogsOut ( );
 
     }
