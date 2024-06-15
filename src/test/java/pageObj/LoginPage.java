@@ -1,5 +1,7 @@
 package pageObj;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -67,16 +69,17 @@ public class LoginPage {
     @FindBy(xpath = psdErr)
     WebElement pswdErrorMsg;
 
+    Logger logger;
 
     public WebElement getUserName() {
         return userName;
     }
 
-    public WebElement getPassWord() {
+    private WebElement getPassWord() {
         return passWord;
     }
 
-    public WebElement getLoginBtn() {
+    private WebElement getLoginBtn() {
         return loginBtn;
     }
 
@@ -86,6 +89,7 @@ public class LoginPage {
 
     public void clickSignIn() {
         signIn.click ( );
+        logger = LogManager.getLogger(this.getClass());
     }
 
     public void setUserName(String usrName) {
@@ -109,12 +113,12 @@ public class LoginPage {
 
     public void verifyHomePage() {
         if (homePageBanner.isDisplayed ( )) {
-            System.out.println ("Home Page verified");
+            logger.info ("Home Page verified");
             Assert.assertTrue (true);
             return;
         }
         Assert.assertFalse (false);
-        System.out.println ("Home Page not verified");
+        logger.info ("Home Page not verified");
     }
 
     public void userLogsOut() {
