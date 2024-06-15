@@ -7,15 +7,9 @@ import io.cucumber.java.en.When;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObj.LoginPage;
+import utility.InitialHelper;
 import utility.WaitHelper;
-
-import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 public class LoginStep {
 
@@ -27,26 +21,24 @@ public class LoginStep {
 
     @Given("User opens the browser")
     public void userOpensTheBrowser() {
-        System.setProperty ("webdriver.chrome.driver", "D:\\chromedriver.exe");
-        ChromeOptions options = new ChromeOptions ( );
-        options.setBinary ("D:\\chrome-win64\\chrome.exe");
-        options.addArguments ("--disable-notifications");
-        driver = new ChromeDriver (options);
-        driver.manage ( ).window ( ).maximize ( );
-        driver.manage ( ).timeouts ( ).implicitlyWait (8, TimeUnit.SECONDS);
+        driver = InitialHelper.iniitializeChromeBrowser ( );
         loginPage = new LoginPage (driver);
 //        driverWait = new WebDriverWait (driver, Duration.ofSeconds (8));
-        logger = LogManager.getLogger (this.getClass ( ));
+        logger = LogManager.getLogger (LoginStep.class);
+        System.out.println("Logger initialized: " + logger);
+        logger.info ("Logger initialized in this Class");
         waitHelper = new WaitHelper (driver);
     }
 
     @When("^User opens the URL \"([^\"]*)\"$")
     public void userOpensTheURL(String providerURL) {
+        logger.info ("User enters the URL");
         driver.get (providerURL);
     }
 
     @Then("^User clicks on sign-in$")
     public void userClicksOnSignIn() {
+        logger.info ("User clicked on sign-in");
         loginPage.clickSignIn ( );
     }
 

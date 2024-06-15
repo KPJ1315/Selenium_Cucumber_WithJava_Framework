@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="234.626" tests="8" skipped="0" failures="0" errors="0">
-<testcase classname="Doctor Login" name="Doctor login with valid credentials" time="9.099">
+<testsuite name="Cucumber" time="244.938" tests="8" skipped="0" failures="0" errors="0">
+<testcase classname="Doctor Login" name="Doctor login with valid credentials" time="12.49">
 <system-out><![CDATA[
 Given User opens the browser................................................passed
 When User opens the URL "https://acianadocisnuiprod-staging.azurewebsites.net/user/signIn".passed
@@ -11,7 +11,7 @@ When User clicks on logout..................................................pass
 Then User closes browser....................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Doctor Login" name="Doctor login with invalid credentials - Example #1.1" time="35.417">
+<testcase classname="Doctor Login" name="Doctor login with invalid credentials - Example #1.1" time="36.648">
 <system-out><![CDATA[
 Given User opens the browser................................................passed
 When User opens the URL "https://acianadocisnuiprod-staging.azurewebsites.net/user/signIn".passed
@@ -21,7 +21,7 @@ And User is shown error message.............................................pass
 Then User closes browser....................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Doctor Login" name="Doctor login with invalid credentials - Example #1.2" time="35.656">
+<testcase classname="Doctor Login" name="Doctor login with invalid credentials - Example #1.2" time="36.518">
 <system-out><![CDATA[
 Given User opens the browser................................................passed
 When User opens the URL "https://acianadocisnuiprod-staging.azurewebsites.net/user/signIn".passed
@@ -31,7 +31,7 @@ And User is shown error message.............................................pass
 Then User closes browser....................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Doctor Login" name="Doctor login with invalid credentials - Example #1.3" time="36.331">
+<testcase classname="Doctor Login" name="Doctor login with invalid credentials - Example #1.3" time="36.311">
 <system-out><![CDATA[
 Given User opens the browser................................................passed
 When User opens the URL "https://acianadocisnuiprod-staging.azurewebsites.net/user/signIn".passed
@@ -41,7 +41,7 @@ And User is shown error message.............................................pass
 Then User closes browser....................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Doctor Login" name="Doctor login with invalid credentials - Example #1.4" time="27.288">
+<testcase classname="Doctor Login" name="Doctor login with invalid credentials - Example #1.4" time="28.41">
 <system-out><![CDATA[
 Given User opens the browser................................................passed
 When User opens the URL "https://acianadocisnuiprod-staging.azurewebsites.net/user/signIn".passed
@@ -51,7 +51,7 @@ And User is shown error message.............................................pass
 Then User closes browser....................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Doctor Login" name="Doctor login with invalid credentials - Example #1.5" time="35.35">
+<testcase classname="Doctor Login" name="Doctor login with invalid credentials - Example #1.5" time="36.812">
 <system-out><![CDATA[
 Given User opens the browser................................................passed
 When User opens the URL "https://acianadocisnuiprod-staging.azurewebsites.net/user/signIn".passed
@@ -61,7 +61,7 @@ And User is shown error message.............................................pass
 Then User closes browser....................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Doctor Login" name="Doctor login with invalid credentials - Example #1.6" time="27.602">
+<testcase classname="Doctor Login" name="Doctor login with invalid credentials - Example #1.6" time="28.678">
 <system-out><![CDATA[
 Given User opens the browser................................................passed
 When User opens the URL "https://acianadocisnuiprod-staging.azurewebsites.net/user/signIn".passed
@@ -71,7 +71,7 @@ And User is shown error message.............................................pass
 Then User closes browser....................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Doctor Login" name="Doctor login with invalid credentials - Example #1.7" time="27.702">
+<testcase classname="Doctor Login" name="Doctor login with invalid credentials - Example #1.7" time="28.801">
 <system-out><![CDATA[
 Given User opens the browser................................................passed
 When User opens the URL "https://acianadocisnuiprod-staging.azurewebsites.net/user/signIn".passed

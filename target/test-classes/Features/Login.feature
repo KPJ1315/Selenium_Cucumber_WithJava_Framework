@@ -1,11 +1,13 @@
 @run
 Feature: Doctor Login
 
-  @TC1
-  Scenario: Doctor login with valid credentials
+  Background: Commonly used steps that are repeating
     Given User opens the browser
     When User opens the URL "https://acianadocisnuiprod-staging.azurewebsites.net/user/signIn"
     Then User clicks on sign-in
+
+  @TC1
+  Scenario: Doctor login with valid credentials
     And  User enters email "karthik.jambagi@archents.com" and password "Kpj@4321" and clicks login
     Then User lands on provider homepage
     When User clicks on logout
@@ -13,9 +15,6 @@ Feature: Doctor Login
 
     @TC2
     Scenario Outline: Doctor login with invalid credentials
-      Given User opens the browser
-      When User opens the URL "https://acianadocisnuiprod-staging.azurewebsites.net/user/signIn"
-      Then User clicks on sign-in
       And  User enters email "<username>" and password "<password>" and clicks login
       And  User is shown error message
       Then User closes browser
