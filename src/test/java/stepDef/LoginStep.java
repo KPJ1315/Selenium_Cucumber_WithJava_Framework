@@ -21,11 +21,9 @@ public class LoginStep {
 
     WebDriver driver;
     LoginPage loginPage;
-//    WebDriverWait driverWait;
+    //    WebDriverWait driverWait;
     Logger logger;
     WaitHelper waitHelper;
-
-
 
     @Given("User opens the browser")
     public void userOpensTheBrowser() {
@@ -38,7 +36,7 @@ public class LoginStep {
         driver.manage ( ).timeouts ( ).implicitlyWait (8, TimeUnit.SECONDS);
         loginPage = new LoginPage (driver);
 //        driverWait = new WebDriverWait (driver, Duration.ofSeconds (8));
-        logger = LogManager.getLogger (this.getClass ());
+        logger = LogManager.getLogger (this.getClass ( ));
         waitHelper = new WaitHelper (driver);
     }
 
@@ -55,12 +53,12 @@ public class LoginStep {
     @And("^User enters email \"([^\"]*)\" and password \"([^\"]*)\" and clicks login$")
     public void userEntersEmailAndPasswordAndClicksLogin(String userName, String password) {
         try {
-            logger.info ("Try to login with these creds: \n Username: "+userName+"\n Paswword: "+password);
-         // driverWait.until (ExpectedConditions.visibilityOf (loginPage.getUserName ()));
-            waitHelper.WaitForElement (loginPage.getUserName (),10 );
-          loginPage.setUserName (userName);
-          loginPage.setPassWord (password);
-          loginPage.clickLoginButton( );
+            logger.info ("Try to login with these creds: \n Username: " + userName + "\n Paswword: " + password);
+            // driverWait.until (ExpectedConditions.visibilityOf (loginPage.getUserName ()));
+            waitHelper.WaitForElement (loginPage.getUserName ( ), 10);
+            loginPage.setUserName (userName);
+            loginPage.setPassWord (password);
+            loginPage.clickLoginButton ( );
         } catch (Exception e) {
             throw new RuntimeException (e);
         }
@@ -80,7 +78,7 @@ public class LoginStep {
     @When("^User clicks on logout$")
     public void userClicksOnLogout() {
         //driverWait.withTimeout (Duration.ofSeconds (5000));
-        waitHelper.WaitForElement (loginPage.getHomePage (),5);
+        waitHelper.WaitForElement (loginPage.getHomePage ( ), 5);
         loginPage.userLogsOut ( );
 
     }
@@ -92,6 +90,6 @@ public class LoginStep {
 
     @And("User is shown error message")
     public void userIsShownErrorMessage() {
-        loginPage.verifyErrorMsg();
+        loginPage.verifyErrorMsg ( );
     }
 }
